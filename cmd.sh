@@ -1,4 +1,4 @@
 #!/bin/bash
 echo 'This is command start daemon nginx'
 echo ''
-nginx -g daemon off; & sleep 5
+nginx -g daemon off;
