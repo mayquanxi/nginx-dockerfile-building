@@ -1,5 +1,3 @@
 FROM nginx:alpine
-
-USER root
-
-CMD ["nginx", "-g", "daemon off;"]
+RUN apt-get update
+COPY html /usr/share/nginx/html

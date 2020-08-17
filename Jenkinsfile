@@ -1,14 +1,20 @@
 pipeline {
     agent {
         dockerfile {
+            filename 'Dockerfile'
+            dir '.'
+            label 'akali'
             args '-p 8008:80'
         }
     }
     stages {
-        stage('Build and test') {
+        stage('Build') {
             steps {
-                echo 'check website on port 8008 and test website right now'
-                sh 'sleep 250'
+                echo 'This is BUILD stage'
+                echo ''
+                sh './cmd.sh'
+                echo 'access address for complete stage: http://127.0.0.1:8008 '
+                input message: 'Click to process to allow continue project or abort to quit'
             }
         }
     }
