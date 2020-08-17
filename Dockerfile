@@ -1,3 +1,2 @@
-FROM nginx:alpine
-RUN apt-get update
+FROM nginx
 COPY html /usr/share/nginx/html
