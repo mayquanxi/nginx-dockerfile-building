@@ -11,8 +11,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'This is BUILD stage'
-                echo ''
+                echo 'Copy config'
                 sh 'cp default.conf /etc/nginx/conf.d/'
+                sh 'cp nginx.conf /etc/nginx/'
                 sh './cmd.sh'
                 echo 'access address for complete stage: http://127.0.0.1:8008 '
                 input message: 'Click to process to allow continue project or abort to quit'
